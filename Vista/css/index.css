@@ -1,0 +1,185 @@
+* 
+{
+  /*padding: 0;
+  margin: 0;*/
+  font-family: Verdana;
+}
+
+body
+{
+   background: url(../../product_images/Fondo.jpg) no-repeat center center fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+}
+
+#Tab
+{
+  width:960px;
+  margin:50px auto;
+  font-family: 'Raleway', sans-serif;
+}
+
+#img
+{
+    filter: invert(0.4);
+}
+
+/*
+form
+{
+  width:450px;
+  float: left;
+  border-radius: 10px;
+  font-family:raleway;
+  padding: 30px 40px 25px;
+  border: 1px solid black;
+  margin-top: 0px;
+}
+
+#Historial
+{
+  width:600px;
+  float: right;
+  border-radius: 10px;
+  font-family:raleway;
+  border: 1px solid black;
+  padding: 10px 10px 15px;
+  margin-top: 0px;
+  
+}
+*/
+
+#Tabla1
+{
+  background-color:#333c87;
+  width:450px;
+  float: left;
+  border-radius: 10px;
+  font-family:raleway;
+  border: 1px solid black;
+  padding: 30px 40px 25px;
+  margin-top: -360px;
+}
+
+#Tabla2
+{
+  background-color:#333c87;
+  width:450px;
+  float: right;
+  border-radius: 10px;
+  font-family:raleway;
+  border: 1px solid black;
+  padding: 30px 40px 25px;
+  margin-top: -360px;
+}
+
+.menu
+{
+	padding: 0;
+	list-style: none;
+	width: 1300px;
+	font-size: 18px;
+	background: #c1c1c1;
+	border: 2px solid rgba(0, 0, 0, 1);
+	
+	/* 	
+	border: 1px solid rgba(0, 0, 0, 0.8); 
+	background: #c1c1c1;
+	font-size: 18px;
+	*/
+}
+
+.menu li a
+{
+	display: block;
+	border-bottom: 2px solid rgba(1, 1, 1, 1);
+	border-top: 1px solid rgba(255, 255, 255, 1);
+	background: #18171c;
+	text-decoration: none;
+	color: #FFF;
+	text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.8);
+	filter: dropshadow(color=#000, offx = 1, offy = 0);
+	padding: 10px;
+	padding-left: 20px;
+	
+	/* 	
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.2);
+	background: #3e3f44;
+	*/
+}
+
+.menu li ul li a
+{
+	font-size: 16px;
+	color: white;
+	text-shadow: 1px 0px 1px rgba(255, 255, 255, 0.5);
+	
+	/* 	
+	font-size: 14px;
+	color: #47689d;
+	*/
+}
+
+.menu li a:hover
+{
+	background: #cbcbcb;
+	color: black;
+	-moz-transition: background 0.3s ease-in;
+	-webkit-transition: background 0.3s ease-in;
+	-o-transition: background 0.3s ease-in;
+	
+	/* 	
+	background: #4a6ba2;
+	background: #a10684;
+	*/
+}
+
+.menu ul
+{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	height: 0;
+	overflow: hidden;
+	transition: 1s;
+	-moz-transition: 1s;
+	-webkit-transition: 1s;
+}
+
+.menu li:hover ul
+{
+	height: 40px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	
+	/* 	
+	height: 120px;
+	*/
+}
+
+.menu ul li a
+{
+	background: #242424;
+	
+	/* 	
+	background: #fafafa;
+	*/
+}
+
+.menu ul li a:hover
+{
+	background: none repeat scroll 0 0 #ccc;
+	color: black;
+	-moz-transition: color 0.4s ease;
+	-webkit-transition: color 0.4s ease;
+	-o-transition: color 0.4s ease;
+	
+	/* 	
+	background: none repeat scroll 0 0 #ccc;
+	color: #fff;
+	*/
+}

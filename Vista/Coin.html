@@ -1,0 +1,803 @@
+<!DOCTYPE HTML>
+<html lang = "es">
+<head>
+    <meta charset = "utf-8">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <title>SILVER COIN</title>
+    <link rel="stylesheet" href="css/coin.css?v=<?php echo time(); ?>"/>
+    <link 
+	  href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
+	  rel="stylesheet" 
+	  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
+	  crossorigin="anonymous">
+    <script>
+    function Calc()
+	{
+	      Valor = Coin.Valor.value;
+	      
+	      // Total = Coin.Total.value;
+		  
+		  var Tip1 = document.getElementById("T_Moneda1");
+		  var Tipo_C1 = Tip1.options[Tip1.selectedIndex].value;
+		  
+		  var Tip2 = document.getElementById("T_Moneda2");
+		  var Tipo_C2 = Tip2.options[Tip2.selectedIndex].value;
+		  
+		  if((Tipo_C1 == "Peso Colombiano - COP" && Tipo_C2 == "Peso Colombiano - COP") || (Tipo_C1 == "Peso Mexicano - MXN" && Tipo_C2 == "Peso Mexicano - MXN") || (Tipo_C1 == "Dólar Americano - USD" && Tipo_C2 == "Dólar Americano - USD") || (Tipo_C1 == "Dólar Canadiense - CAD" && Tipo_C2 == "Dólar Canadiense - CAD") || (Tipo_C1 == "Euro - EUR" && Tipo_C2 == "Euro - EUR") || (Tipo_C1 == "Yen Japones - JPY" && Tipo_C2 == "Yen Japones - JPY") || (Tipo_C1 == "Yuan Chino - CNY" && Tipo_C2 == "Yuan Chino - CNY"))
+		  {
+		      Resultado = Valor;
+		      
+		      Coin.Total.value = Resultado;
+		  }
+		  
+		  if(Tipo_C1 == "Peso Colombiano - COP" && Tipo_C2 == "Peso Mexicano - MXN")
+		  { 
+		      Resultado = Valor * 0.0053;  // De Pesos Colombianos a Pesos Mexicanos
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+
+		  if(Tipo_C1 == "Peso Colombiano - COP" && Tipo_C2 == "Dólar Americano - USD")
+		  {
+		      Resultado = Valor * 0.00026;  // De Pesos Colombianos a D��lares Americanos
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Peso Colombiano - COP" && Tipo_C2 == "Dólar Canadiense - CAD")
+		  {
+		      Resultado = Valor * 0.00032;  // De Pesos Colombianos a D��lares Canadienses
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Peso Colombiano - COP" && Tipo_C2 == "Euro - EUR")
+		  {
+		      Resultado = Valor * 0.00022;  // De Pesos Colombianos a Euros
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Peso Colombiano - COP" && Tipo_C2 == "Yen Japones - JPY")
+		  {
+		      Resultado = Valor * 0.029;  // De Pesos Colombianos a Yens Japones��s
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Peso Colombiano - COP" && Tipo_C2 == "Yuan Chino - CNY")
+		  {
+		      Resultado = Valor * 0.0017;  // De Pesos Colombianos a Yuans Chinos
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Peso Mexicano - MXN" && Tipo_C2 == "Peso Colombiano - COP")
+		  {
+		      Resultado = Valor * 190.20;  // De Pesos Mexicanos a Pesos Colombianos
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Peso Mexicano - MXN" && Tipo_C2 == "Dólar Americano - USD")
+		  {
+		      Resultado = Valor * 0.049;  // De Pesos Mexicanos a D��lares Americanos
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Peso Mexicano - MXN" && Tipo_C2 == "Dólar Canadiense - CAD")
+		  {
+		      Resultado = Valor * 0.061;  // De Pesos Mexicanos a D��lares Canadienses
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Peso Mexicano - MXN" && Tipo_C2 == "Euro - EUR")
+		  {
+		      Resultado = Valor * 0.043;  // De Pesos Mexicanos a Euros
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Peso Mexicano - MXN" && Tipo_C2 == "Yen Japones - JPY")
+		  {
+		      Resultado = Valor * 5.58;  // De Pesos Mexicanos a Yens Japones��s
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Peso Mexicano - MXN" && Tipo_C2 == "Yuan Chino - CNY")
+		  {
+		      Resultado = Valor * 0.31;  // De Pesos Mexicanos a Yuans Chinos
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Dólar Americano - USD" && Tipo_C2 == "Peso Colombiano - COP")
+		  {
+		      Resultado = Valor * 3887.02;  // De D��lares Americanos a Pesos Colombianos
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Dólar Americano - USD" && Tipo_C2 == "Peso Mexicano - MXN")
+		  {
+		      Resultado = Valor * 20.34;  // De D��lares Americanos a Pesos Mexicanos
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Dólar Americano - USD" && Tipo_C2 == "Dólar Canadiense - CAD")
+		  {
+		      Resultado = Valor * 1.24;  // De D��lares Americanos a D��lares Canadienses
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Dólar Americano - USD" && Tipo_C2 == "Euro - EUR")
+		  {
+		      Resultado = Valor * 0.86;  // De D��lares Americanos a Euros
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Dólar Americano - USD" && Tipo_C2 == "Yen Japones - JPY")
+		  {
+		      Resultado = Valor * 113.35;  // De D��lares Americanos a Yens Japones��s
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Dólar Americano - USD" && Tipo_C2 == "Yuan Chino - CNY")
+		  {
+		      Resultado = Valor * 6.40;  // De D��lares Americanos a Yuans Chinos
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Dólar Canadiense - CAD" && Tipo_C2 == "Peso Colombiano - COP")
+		  {
+		      Resultado = Valor * 3109.33;  // De D��lares Canadienses a Pesos Colombianos
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Dólar Canadiense - CAD" && Tipo_C2 == "Peso Mexicano - MXN")
+		  {
+		      Resultado = Valor * 16.35;  // De D��lares Canadienses a Pesos Mexicanos
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Dólar Canadiense - CAD" && Tipo_C2 == "Dólar Americano - USD")
+		  {
+		      Resultado = Valor * 0.80;  // De D��lares Canadienses a D��lares Americanos
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Dólar Canadiense - CAD" && Tipo_C2 == "Euro - EUR")
+		  {
+		      Resultado = Valor * 0.69;  // De D��lares Canadienses a Euros
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Dólar Canadiense - CAD" && Tipo_C2 == "Yen Japones - JPY")
+		  {
+		      Resultado = Valor * 91.09;  // De D��lares Canadienses a Yens Japones��s
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Dólar Canadiense - CAD" && Tipo_C2 == "Yuan Chino - CNY")
+		  {
+		      Resultado = Valor * 5.14;  // De D��lares Canadienses a Yuans Chinos
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Euro - EUR" && Tipo_C2 == "Peso Colombiano - COP")
+		  {
+		      Resultado = Valor * 4483.77;  // De Euros a Pesos Colombianos
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Euro - EUR" && Tipo_C2 == "Peso Mexicano - MXN")
+		  {
+		      Resultado = Valor * 23.53;  // De Euros a Pesos Mexicanos
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Euro - EUR" && Tipo_C2 == "Dólar Americano - USD")
+		  {
+		      Resultado = Valor * 1.16;  // De Euros a D��lares Americanos
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Euro - EUR" && Tipo_C2 == "Dólar Canadiense - CAD")
+		  {
+		      Resultado = Valor * 1.44;  // De Euros a D��lares Canadienses
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Euro - EUR" && Tipo_C2 == "Yen Japones - JPY")
+		  {
+		      Resultado = Valor * 131.05;  // De Euros a Yens Japon��s
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Euro - EUR" && Tipo_C2 == "Yuan Chino - CNY")
+		  {
+		      Resultado = Valor * 7.40;  // De Euros a Yuans Chinos
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Yen Japones - JPY" && Tipo_C2 == "Peso Colombiano - COP")
+		  {
+		      Resultado = Valor * 34.21;  // De Yens Japoneses a Pesos Colombianos
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Yen Japones - JPY" && Tipo_C2 == "Peso Mexicano - MXN")
+		  {
+		      Resultado = Valor * 0.18;  // De Yens Japoneses a Pesos Mexicanos
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Yen Japones - JPY" && Tipo_C2 == "Dólar Americano - USD")
+		  {
+		      Resultado = Valor * 0.0088;  // De Yens Japoneses a D��lares Americanos
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Yen Japones - JPY" && Tipo_C2 == "Dólar Canadiense - CAD")
+		  {
+		      Resultado = Valor * 0.011;  // De Yens Japoneses a D��lares Canadienses
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Yen Japones - JPY" && Tipo_C2 == "Euro - EUR")
+		  {
+		      Resultado = Valor * 0.0076;  // De Yens Japoneses a Euros
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Yen Japones - JPY" && Tipo_C2 == "Yuan Chino - CNY")
+		  {
+		      Resultado = Valor * 0.056;  // De Yens Japoneses a Yuans Chinos
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Yuan Chino - CNY" && Tipo_C2 == "Peso Colombiano - COP")
+		  {
+		      Resultado = Valor * 606.38;  // De Yuans Chinos a Pesos Colombianos
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Yuan Chino - CNY" && Tipo_C2 == "Peso Mexicano - MXN")
+		  {
+		      Resultado = Valor * 3.18;  // De Yuans Chinos a Pesos Mexicanos
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Yuan Chino - CNY" && Tipo_C2 == "Dólar Americano - USD")
+		  {
+		      Resultado = Valor * 0.16;  // De Yuans Chinos a D��lares Americanos
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Yuan Chino - CNY" && Tipo_C2 == "Dólar Canadiense - CAD")
+		  {
+		      Resultado = Valor * 0.19;  // De Yuans Chinos a D��lares Canadienses
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Yuan Chino - CNY" && Tipo_C2 == "Euro - EUR")
+		  {
+		      Resultado = Valor * 0.14;  // De Yuans Chinos a Euros
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+		  
+		  if(Tipo_C1 == "Yuan Chino - CNY" && Tipo_C2 == "Yen Japones - JPY")
+		  {
+		      Resultado = Valor * 17.73;  // De Yuans Chinos a Yens Japoneses
+		      
+		      Coin.Total.value = Resultado.toFixed(2);
+		  }
+
+		  // Coin.Total.value = Math.round((Resultado + Number.EPSILON) * 100) / 100;
+	}
+	</script>
+	
+</head>
+<body style="background-color:#b4b6b9" background="../public_images/FondoC.jpg">
+<audio id="Ayuda" src = "../music/Añadir_P.mp3" autoplay = "autoplay"></audio>
+<audio id="index" src = "../music/index.mp3" autoplay = "autoplay" loop = "loop"></audio>
+    <div class = "sticky-top">
+    <div style = "background-color:#242424">
+            <!--&nbsp;&nbsp;<a href="index1.php"><img src = "../product_images/Ermis Logo (editado).png" height=46 width=40></a><a href="../index1.php" class="navbar-brand"> <font size=5 color = "gray" face="Times New Roman, arial">&nbsp;ERMIS</font></a>-->
+            <a href = "../index1.php"><button style="background-color: #242424" onmouseover="this.style.backgroundColor='#242424'; this.style.color='black'" onmouseout="this.style.backgroundColor='#242424'; this.style.color='#242424'" class="btn btn-dark"><font size=5 color = "gray" face="Times New Roman, arial"><img src = "../product_images/Ermis Logo (editado).png" height=46 width=40>&nbsp;ERMIS</font></button></a>
+            <a href = "../index1.php"><button style="background-color: #242424" onmouseover="this.style.backgroundColor='white'; this.style.color='black'" onmouseout="this.style.backgroundColor='#242424'; this.style.color='white'" class="btn btn-dark"><font size=3 color = "gray" face="Times New Roman, arial"><img id = "img" src = "../product_images/Icono Casa.png" height=30 width=30>&nbsp;&nbsp;&nbsp;Inicio</font></button></a>
+            <a href = "../index1.php"><button style="background-color: #242424" onmouseover="this.style.backgroundColor='white'; this.style.color='black'" onmouseout="this.style.backgroundColor='#242424'; this.style.color='white'" class="btn btn-dark"><font size=3 color = "gray" face="Times New Roman, arial"><img id = "img" src = "../product_images/Icono Flecha.png" height=20 width=20>&nbsp;&nbsp;&nbsp;Volver</font></button></a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button style="background-color: #242424" class="btn btn-dark" id="Play"><img src="../product_images/Boton Play.PNG" height="26px" weight="26px"></button>
+            <script>
+				
+				function iniciar() 
+				{ 
+				    var boton=document.getElementById('Play'); 
+				    boton.addEventListener('click', Play, false); 
+                } 
+
+				function Play() 
+				{ 
+				    var audio=document.getElementById('index'); 
+				    audio.play(); 
+				} 
+				window.addEventListener('load', iniciar, false); 
+				
+			</script>
+            <button style="background-color: #242424" class="btn btn-dark" id="Pausa"><img src="../product_images/Boton Pausa.PNG" height="26px" weight="26px"></button>
+            <script>
+				
+				function inicio() 
+				{ 
+				    var boton=document.getElementById('Pausa'); 
+				    boton.addEventListener('click', Pausa, false); 
+                } 
+
+				function Pausa() 
+				{ 
+				    var audio=document.getElementById('index'); 
+				    audio.pause(); 
+				} 
+				window.addEventListener('load', inicio, false);
+				
+			</script>
+    </div>
+    </div>
+
+    <canvas width="1500" height="123" id="lienzo"></canvas>
+	<script>
+		var cnv, ctx, pos_x = 0, img;
+
+		function anim() 
+		{
+			ctx.clearRect(0, 0, 1500, 123);
+			ctx.drawImage(img, pos_x, 0);
+			pos_x += 0.1;
+			
+			if(pos_x > 1500)
+			{
+			    pos_x = 5;
+			}
+			
+			setTimeout(anim, 100);
+		}
+         
+		window.onload = function() 
+		{
+			img = new Image();
+			img.src = '../product_images/Moneda.png';
+			cnv = document.getElementById('lienzo');
+			ctx = cnv.getContext('2d');
+			
+			// Inicia la animaci��n
+			
+			for(i = 0;i <= 100; i++)
+			{
+			    secuencia= anim() + i;
+			}
+			
+		}
+		
+	</script>
+<script>
+	// alert("Bienvenido al Menú de Calculadora de Conversión de Moneda")
+	// alert("A continuación, se muestra el formulario para conocer la conversión de la moneda. Posteriormente, este se va a diliugenciar en la tabla al seleccionar la opción Calcular")
+</script>
+<h3><center>Calculadora de Moneda</center></h3>
+<center>
+<div class="container-fluid">
+  
+  <form action = "" method = "pos" name = "Coin">
+    
+    <div class="col-md-4">
+          
+    <center><label for="Valor" class="form-label"><b>Valor</b></label></center>
+    <input type="number" class="form-control" id="Valor" placeholder = "Ingrese el valor a convertir" name=Valor value="" min="0" oninput="this.value = Math.abs(this.value)" required>
+    
+    <select class="form-select" id="T_Moneda1" name=T_Moneda1 required>
+      <option selected disabled value="0">Seleccione tipo de moneda</option>
+	  <option>Peso Colombiano - COP</option>
+	  <option>Peso Mexicano - MXN</option>
+	  <option>Dólar Americano - USD</option>
+	  <option>Dólar Canadiense - CAD</option>
+	  <option>Euro - EUR</option>
+	  <option>Yen Japones - JPY</option>
+	  <option>Yuan Chino - CNY</option>
+    </select>
+    
+    </div>
+  
+  <p></p>
+  
+  <div class="col-md-4">
+  
+   <center><label for="Total" class="form-label"><b>Total&nbsp;</b></label></center>
+   <input type="number" class="form-control" id="Total" placeholder = "Valor convertido" name=Total value="" min="0" oninput="this.value = Math.abs(this.value)" disabled>
+  
+   <select class="form-select" id="T_Moneda2" name=T_Moneda2 required>
+      <option selected disabled value="0">Seleccione tipo de moneda</option>
+	  <option>Peso Colombiano - COP</option>
+	  <option>Peso Mexicano - MXN</option>
+	  <option>Dólar Americano - USD</option>
+	  <option>Dólar Canadiense - CAD</option>
+	  <option>Euro - EUR</option>
+	  <option>Yen Japones - JPY</option>
+	  <option>Yuan Chino - CNY</option>
+   </select>
+   
+   </div>
+  
+  <p></p>
+  
+  <div class="col-md-4">
+  &nbsp;
+  <center>
+    <input type="button" value="Calcular" class="btn btn-primary" onclick = "Calc()" id="Tabla">
+  <!-- &nbsp;
+    <input type="button" value="Guardar Registro" class="btn btn-success" id="Tabla"> -->
+  &nbsp; 
+    <input type="reset" value="Borrar valores" class="btn btn-dark" id="Nuevo">
+  </center>
+  </div>
+  <p></p>
+
+  </form>
+  
+  </div>
+  
+  &nbsp;&nbsp;&nbsp;
+  <div class="col-md-4">
+  <h4 class="display-8" id = "h1"><center><b> HISTORIAL DE OPERACIONES </b></center></h4>
+
+  <br>
+  
+  <table class="table" id="Registros">
+     <thead>
+     <tr>
+       <th style='background-color: #333c87' scope="col"><font color = "white"><center>Valor</center></font></th>
+       <th style='background-color: #333c87' scope="col"><font color = "white"><center>Moneda Inicial</center></font></th>
+	   <th style='background-color: #333c87' scope="col"><font color = "white"><center>Total</center></font></th>
+       <th style='background-color: #333c87' scope="col"><font color = "white"><center>Moneda Final</center></font></th>
+     </tr>
+    </thead>
+
+  <tbody>
+	
+  </tbody>
+
+  </table>
+  
+  </div>
+  
+  <h3>
+  ¿Sabias Qué?
+  </h3>
+  <font size = "5">
+  <b>Peso Colombiano</b>
+  <p>
+  <img src="../product_images/Peso C.png" align="left" width=300px height=150px>
+  </p>
+  <div id = "Texto1" align=right>
+  <p>
+     El peso es la unidad monetaria de curso legal en la República de Colombia. Su abreviación formal es COP (ISO 4217), e informalmente es abreviada COL$. 
+     Localmente se usa el signo peso. Su circulación es controlada por el Banco de la República de Colombia. El peso ha sido la moneda colombiana desde 1810. 
+     En 1837 el peso reemplazó al real a una tasa de cambio de 1 peso = 8 reales, estando dividido inicialmente en 8 reales
+  </p>
+  <input type="button" value="Aumentar tamaño" class="btn btn-success" id="Aum1">
+  <input type="button" value="Disminuir tamaño" class="btn btn-danger" id="Dim1">
+  </div>
+  <br><br>
+  <b>Peso Mexicano</b>
+  <p>
+  <img src="../product_images/Peso M.png" align="right" width=300px height=150px>
+  </p>
+  <div id = "Texto2" align=left>
+  <p>
+     El peso mexicano es la moneda de curso legal de México. El peso mexicano es la primera moneda en el mundo en utilizar el signo $, incluso antes que el dólar estadounidense, 
+     la cual, más tarde lo adoptó para su propio uso. El peso mexicano es la decimoquinta moneda más negociada en el mundo, la más negociada de América Latina y la tercera 
+     más negociada en toda América
+  </p>
+  <input type="button" value="Aumentar tamaño" class="btn btn-success" id="Aum2">
+  <input type="button" value="Disminuir tamaño" class="btn btn-danger" id="Dim2">
+  </div>
+  <br><br>
+  <b>Dólar Americano</b>
+  <p>
+  <img src="../product_images/Dolar Am.jpg" align="left" width=300px height=150px>
+  </p>
+  <div id = "Texto3" align=right>
+  <p>
+     El dólar estadounidense (también abreviado con los símbolos $, US$ o su estándar internacional USD) es la moneda oficial de Estados Unidos, sus dependencias y otros países. 
+     El dólar es la moneda de reserva internacional más importante del mundo y también la más utilizada en las transacciones internacionales.
+  </p>
+  <input type="button" value="Aumentar tamaño" class="btn btn-success" id="Aum3">
+  <input type="button" value="Disminuir tamaño" class="btn btn-danger" id="Dim3">
+  </div>
+  <br><br>
+  <b>Dólar Canadiense</b>
+  <p>
+  <img src="../product_images/Dolar Can.jpg" align="right" width=300px height=150px>
+  </p>
+  <div id = "Texto4" align=left>
+  <p>
+     El dólar canadiense (en inglés: Canadian dollar, en francés: dollar canadien; en el uso habitual, simplemente dollar) es la unidad monetaria oficial de Canadá.
+     Se subdivide en 100 cents (centavos) Su código ISO 4217 es CAD. El dólar ha estado en vigor durante gran parte de la historia de Canadá.
+  </p>
+  <input type="button" value="Aumentar tamaño" class="btn btn-success" id="Aum4">
+  <input type="button" value="Disminuir tamaño" class="btn btn-danger" id="Dim4">
+  </div>
+  <br><br>
+  <b>Euro</b>
+  <p>
+  <img src="../product_images/Euro.png" align="left" width=300px height=150px>
+  </p>
+  <div id = "Texto5" align=right>
+  <p>
+    El euro (€) es la moneda usada por las instituciones de la Unión Europea (UE), así como la moneda oficial de la eurozona, formada por 19 de los 27 Estados miembros de la UE: 
+     Alemania, Austria, Bélgica, Chipre, Eslovaquia, Eslovenia, España, Estonia, Finlandia, Francia, Grecia, Irlanda, Italia, Letonia, Lituania, Luxemburgo, Malta, Países Bajos y Portugal.
+  </p>
+  <input type="button" value="Aumentar tamaño" class="btn btn-success" id="Aum5">
+  <input type="button" value="Disminuir tamaño" class="btn btn-danger" id="Dim5">
+  </div>
+  <br><br>
+   <b>Yen Japones</b>
+  <p>
+  <img src="../product_images/Yen.jpg" align="right" width=300px height=150px>
+  </p>
+  <div id = "Texto6" align=left>
+  <p>
+    El yen (símbolo monetario: ¥, ISO: JPY) es la unidad monetaria utilizada en Japón. y la tercera moneda más valorada en el mercado de divisas después del dólar estadounidense y el euro.
+     También es usada como moneda de reserva junto al dólar, el euro y la libra esterlina.
+  </p>
+  <input type="button" value="Aumentar tamaño" class="btn btn-success" id="Aum6">
+  <input type="button" value="Disminuir tamaño" class="btn btn-danger" id="Dim6">
+  </div>
+  <br><br>
+   <b>Yuan Chino</b>
+  <p>
+  <img src="../product_images/Yuan.jpg" align="left" width=300px height=150px>
+  </p>
+  <div id = "Texto7" align=right>
+  <p>
+    El renminbi es la moneda de curso legal de la República Popular China y es emitida por el Banco Popular de China. El yuan es la unidad básica del renminbi, nombre por el que también 
+     se conoce a la moneda. Cada yuan se fracciona en diez jiao o mao y cada jiao se divide en diez fen.
+  </p>
+  <input type="button" value="Aumentar tamaño" class="btn btn-success" id="Aum7">
+  <input type="button" value="Disminuir tamaño" class="btn btn-danger" id="Dim7">
+  </div>
+  </font>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  
+  <div id = "Tab" class="container-fluid">
+  <div id="Tabla1">
+  <p align = "center"><font face = "Verdana" size = "3" color = "white"><b>Convertir Peso Colombiano a Dólar Estadounidense</b></font></p>
+  <table class="table">
+     <thead>
+     <tr>
+       <th scope="col"><center><font color = "white">COP</font></center></th>
+       <th scope="col"><center><font color = "white">USD</font></center></th>
+     </tr>
+    </thead>
+    
+  <tbody>
+	<tr style='background-color: #cbcbcb'>
+	    <td><center>1 COP</center></td>
+	    <td><center>0,000257836 USD</center></td>
+	</tr>
+	<tr style='background-color: #cbcbcb'>
+	    <td><center>5 COP</center></td>
+	    <td><center>0,00128918 USD</center></td>
+	</tr>
+	<tr style='background-color: #cbcbcb'>
+	    <td><center>10 COP</center></td>
+	    <td><center>0,00257836 USD</center></td>
+	</tr>
+	<tr style='background-color: #cbcbcb'>
+	    <td><center>25 COP</center></td>
+	    <td><center>0,00644591 USD</center></td>
+	</tr>
+	<tr style='background-color: #cbcbcb'>
+	    <td><center>50 COP</center></td>
+	    <td><center>0,0128918 USD</center></td>
+	</tr>
+	<tr style='background-color: #cbcbcb'>
+	    <td><center>100 COP</center></td>
+	    <td><center>0,0257836 USD</center></td>
+	</tr>
+	<tr style='background-color: #cbcbcb'>
+	    <td><center>500 COP</center></td>
+	    <td><center>0,128938 USD</center></td>
+	</tr>
+	<tr style='background-color: #cbcbcb'>
+	    <td><center>1000 COP</center></td>
+	    <td><center>0,257876 USD</center></td>
+	</tr>
+	<tr style='background-color: #cbcbcb'>
+	    <td><center>5000 COP</center></td>
+	    <td><center>1,28938 USD</center></td>
+	</tr>
+	<tr style='background-color: #cbcbcb'>
+	    <td><center>10000 COP</center></td>
+	    <td><center>2,57876 USD</center></td>
+	</tr>
+	<tr style='background-color: #cbcbcb'>
+	    <td><center>50000 COP</center></td>
+	    <td><center>12,8938 USD</center></td>
+	</tr>
+  </tbody>
+
+  </table>
+  </div>
+  <div id="Tabla2">
+  <p align = "center"><font face = "Verdana" size = "3" color = "white"><b>Convertir Dólar Estadounidense a Peso Colombiano</b></font></p>
+  <table class="table">
+     <thead>
+     <tr>
+       <th scope="col"><center><font color = "white">USD</font></center></th>
+       <th scope="col"><center><font color = "white">COP</font></center></th>
+     </tr>
+    </thead>
+    
+  <tbody>
+	<tr style='background-color: #cbcbcb'>
+	    <td><center>1 USD</center></td>
+	    <td><center>3878,49 COP</center></td>
+	</tr>
+	<tr style='background-color: #cbcbcb'>
+	    <td><center>5 USD</center></td>
+	    <td><center>19.392,4 COP</center></td>
+	</tr>
+	<tr style='background-color: #cbcbcb'>
+	    <td><center>10 USD</center></td>
+	    <td><center>38.784,9 COP</center></td>
+	</tr>
+	<tr style='background-color: #cbcbcb'>
+	    <td><center>25 USD</center></td>
+	    <td><center>96.962,2 COP</center></td>
+	</tr>
+	<tr style='background-color: #cbcbcb'>
+	    <td><center>50 USD</center></td>
+	    <td><center>193.924 COP</center></td>
+	</tr>
+	<tr style='background-color: #cbcbcb'>
+	    <td><center>100 USD</center></td>
+	    <td><center>387.844 COP</center></td>
+	</tr>
+	<tr style='background-color: #cbcbcb'>
+	    <td><center>500 USD</center></td>
+	    <td><center>1.939.220 COP</center></td>
+	</tr>
+	<tr style='background-color: #cbcbcb'>
+	    <td><center>1000 USD</center></td>
+	    <td><center>3.878.440 COP</center></td>
+	</tr>
+	<tr style='background-color: #cbcbcb'>
+	    <td><center>5000 USD</center></td>
+	    <td><center>19.392.700 COP</center></td>
+	</tr>
+	<tr style='background-color: #cbcbcb'>
+	    <td><center>10000 COP</center></td>
+	    <td><center>38.785.400 COP</center></td>
+	</tr>
+	<tr style='background-color: #cbcbcb'>
+	    <td><center>50000 COP</center></td>
+	    <td><center>193.927.000 COP</center></td>
+	</tr>
+  </tbody>
+
+  </table>
+  </div>
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br>
+  <h3><center>Más Información</center></h3>
+  
+  <nav class="navegacion">
+	<ul class="menu">
+	    <li><a href="https://www.politicaexterior.com/articulo/moneda-digital-disrupcion-o-evolucion/" target="_blank">Moneda Digital</a>
+	    <ul class="submenu">
+				<li><a href="https://www.politicaexterior.com/articulo/moneda-digital-disrupcion-o-evolucion/" target="_blank">Bitcoin</a></li>
+				<li><a href="https://academy.bit2me.com/precio-bitcoin/" target="_blank">¿Cuánto vale un Bitcoin?</a></li>
+			</ul>
+		</li>
+		<li><a href="https://www.banrep.gov.co/es/entidades-autorizadas-0" target="_blank">Banco de la República</a>
+		<ul class="submenu">
+				<li><a href="https://www.rankia.co/blog/mejores-cdts/3449454-mejores-bancos-colombia-2021" target="_blank">Mejores Bancos de Colombia</a></li>
+				<li><a href="https://www.grupobancolombia.com/personas" target="_blank">Grupo Bancolombia</a></li>
+				<li><a href="https://www.bancodebogota.com/wps/portal/banco-de-bogota/bogota" target="_blank">Banco de Bogotá</a></li>
+				<li><a href="https://www.daviviendamovil.com/" target="_blank">Davivienda</a></li>
+				<li><a href="https://www.bbva.com.co/" target="_blank">BBVA Colombia</a></li>
+				<li><a href="https://www.bancow.com.co/canales-de-servicio/nuestras-oficinas/" target="_blank">Banco W</a></li>
+		</ul>
+		</li>
+		<li><a href="https://www.estrategiaynegocios.net/inicio/923166-330/las-10-monedas-m%C3%A1s-importantes-del-mundo" target="_blank">Las 10 Monedas más importantes del mundo</a>
+			<ul class="submenu">
+				<li><a href="https://www.larepublica.co/finanzas/el-peso-colombiano-se-ubico-como-la-moneda-mas-devaluada-en-lo-que-va-de-2021-3214758" target="_blank">Peso Colombiano - La más devaluada del 2021</a></li>
+				<li><a href="https://www.globocambio.co/monedas-del-mundo/peso-mexicano" target="_blank">Historia del Peso Mexicano</a></li>
+				<li><a href="https://www.globocambio.co/monedas-del-mundo/dolar-americano" target="_blank">Circulación Dólar Americano</a></li>
+				<li><a href="https://dolar.wilkinsonpc.com.co/divisas/dolar-canadiense.html" target="_blank">Vigencia Dólar Canadiense</a></li>
+				<li><a href="https://europa.eu/european-union/about-eu/euro_es" target="_blank">Moneda oficial de la zona del Euro</a></li>
+				<li><a href="https://www.globalexchange.hk/da/web/42738/el-yen-japones" target="_blank">Curiosidades Yen Japonés</a></li>
+				<li><a href="https://www.fundssociety.com/es/noticias/mercados/la-apreciacion-del-yuan-chino-frente-al-dolar-se-prolongara-durante-2022-segun-ebury" target="_blank">Apreciación del Yuan Chino en el 2022</a></li>
+			</ul>
+		</li>
+		<li><a href="https://www.ucc.edu.co/Paginas/inicio.aspx" target="_blank">Universidad Cooperativa de Colombia</a></li>
+	</ul>
+   </nav>
+  
+  <center>
+      
+  <h3>
+  Integrantes Proyecto Tienda ERMIS
+  </h3>
+  
+	<div style = "background-color:#18171c">
+	<font color = "#18171c">&nbsp;&nbsp;&nbsp;</font>
+	<font color = "white">
+	<h2>Universidad Cooperativa de Colombia</h2>
+	
+	<img src="https://www.ucc.edu.co/prensa/2013/PublishingImages/Paginas/uso-adecuado-del-logo-y-del-escudo/logo_ucc_2018_actual.png"
+     alt="Universidad Cooperativa de Colombia (UCC)"
+     width="300"
+     height="100">
+	 
+	<p></p>
+	<h5>Herrera Rodríguez Marcel Edilson <br> <p> </p> (marcel.herrerar@campusucc.edu.co - 319 5922700) <br> </h5>
+	<p></p>
+	<p></p>
+	<font color = "#18171c">&nbsp;&nbsp;&nbsp;</font>
+	</font>
+	</div>
+	
+  </center>
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+   crossorigin="anonymous"></script>
+   
+   <script src = "js/Coin.js"></script>
+   </center>
+
+</body>
+</html>

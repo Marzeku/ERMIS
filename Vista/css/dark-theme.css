@@ -1,0 +1,65 @@
+.oscuro
+{ 
+    background-color: #121212; 
+    color: #f1eded; 
+    /*
+    display:flex;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    */
+}
+
+.panel_panel-info
+{
+    background-color: #121212; 
+    color: #f1eded; 
+}
+
+.panel-body
+{
+    background-color: #121212; 
+    color: black;
+    color: #f1eded; 
+}
+
+.row
+{
+    background-color: #121212; 
+    color: black;
+    color: #f1eded; 
+}
+
+.panel-heading
+{
+    background-color: #121212; 
+    color: black;
+    color: #f1eded;
+}
+
+.get_product
+{
+    background-color: #121212; 
+    color: #f1eded; 
+}
+
+.panel_footer
+{
+    background-color: #121212; 
+    color: #f1eded; 
+}
+
+/*.panel
+{
+    background-color: #121212; 
+    color: #f1eded; 
+}*/
+
+
+
+
+
